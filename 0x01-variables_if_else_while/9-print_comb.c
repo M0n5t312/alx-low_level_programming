@@ -5,14 +5,18 @@
  */
 int main(void)
 {
-	int first_digit;
+	int first_digit = '0';
 
-	for (first_digit = 48; first_digit <= 56; first_digit++)
+	while (first_digit <= '9')
 	{
 		putchar(first_digit);
-		putchar(32);
-		putchar(44);
+		if (first_digit != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		first_digit++;		
 	}
-	putchar(57);
+	putchar('\n');
 	return (0);
 }
