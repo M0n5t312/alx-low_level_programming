@@ -6,14 +6,15 @@
  */
 int main(void)
 {
-	char name[] = "Holberton";
-	int i = 0;
-
-	while (name[i] != '\0')
-	{
-		_putchar(name[i]);
-		i++;
-	}
+	_putchar('H');
+	_putchar('o');
+	_putchar('l');
+	_putchar('b');
+	_putchar('e');
+	_putchar('r');
+	_putchar('t');
+	_putchar('o');
+	_putchar('n');
 	_putchar('\n');
 	return (0);
 }
