@@ -1,24 +1,32 @@
 #include "holberton.h"
+
 /**
- * print_rev - print string in reverse
- * @s: string to be reversed
+ * print_rev - prints a string, in reverse, followed by a new line
+ * @s: string to reverse
  */
 
 void print_rev(char *s)
 {
-	int slen = 0;
-	char ch[100];
 
+	int len = 0;
+	int i;
+
+	/* iterate to find length of string and point to last character */
 	while (*s != '\0')
 	{
-		ch[slen] = *s;
-		slen++;
-		s++;
+		len++;
+		++s;
 	}
-	while (slen >= 0)
+
+	/* go back to character before null character */
+	s--;
+
+	/* print string reversed */
+	for (i = len; i > 0; i--)
 	{
-		_putchar(ch[slen]);
-		slen--;
+		_putchar(*s);
+		s--;
 	}
+
 	_putchar('\n');
 }
