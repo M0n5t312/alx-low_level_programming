@@ -1,20 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 /**
- * main - adds positive numbers
- * @argc: count
- * @argv: array
- * Return: 1 Success
+ * is_num - test if it's a number
+ * @argvv: array
+ * Return: true only if string is a number, false if not
  */
+
+bool is_num(char *argvv)
+{
+	int j = 0;
+
+	for (j = 0; argvv[j]; j++)
+	{
+		if (!(argvv[j] >= '0' && argvv[j] <= '9'))
+			return (0);
+	}
+	return (1);
+}
+
+/**
+ * main - print sum if all given are numbers
+ * @argc: counter
+ * @argv: array
+ * Return: 0 on success, 1 if an argument wasn't a number
+ */
+
 int main(int argc, char *argv[])
 {
-	int i, num;
+	int i = 1;
+	int sum = 0;
 
-	if (argc == 0)
-		printf("%d\n", argc);
-	else
-		for (i = 1; i < argc; i++)
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
+	while (i < argc)
+	{
+		if (is_num(argv[i]))
+			sum += atoi(argv[i]);
+		else
 		{
-			if (*(argv + i) != 'a' || *(argv + i) != 'z'
+			printf("Error\n");
+			return (1);
 		}
+		i++;
+	}
+	printf("%d\n", sum);
+
+	return (0);
 }
