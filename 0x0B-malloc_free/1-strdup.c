@@ -31,14 +31,11 @@ char *_strdup(char *str)
 	char *strcp = malloc(sizeof(char) * strlength);
 
 	if (str == NULL)
-		return NULL;
-	else
+		return (NULL);
+	while (i < strlength)
 	{
-		while (i < strlength)
-		{
-			*(strcp + i) = *(str + i);
-			i++;
-		}
-		return strcp;
+		*(strcp + i) = *(str + i);
+		i++;
 	}
+	return (strcp);
 }
