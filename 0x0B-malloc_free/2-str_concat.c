@@ -24,7 +24,7 @@ int _strlen(char *s)
  * @s2: string to be concatenated
  * Return: returns concatenated
  */
-char *str_concat (char *s1, char *s2)
+char *str_concat(char *s1, char *s2)
 {
 	int s1len = _strlen(s1);
 	int s2len = _strlen(s2);
@@ -34,19 +34,16 @@ char *str_concat (char *s1, char *s2)
 
 	if (newlen == 0)
 		return (NULL);
-	else
+	while (i < s1len)
 	{
-		while (i < s1len)
-		{
-			*(newstr + i) = *(s1 + i);
-			i++;
-		}
-		while (s1len < newlen)
-		{
-			*(newstr + s1len) = *(s2 + j);
-			s1len++;
-			j++;
-		}
-		return (newstr);
+		*(newstr + i) = *(s1 + i);
+		i++;
 	}
+	while (s1len < newlen)
+	{
+		*(newstr + s1len) = *(s2 + j);
+		s1len++;
+		j++;
+	}
+	return (newstr);
 }
