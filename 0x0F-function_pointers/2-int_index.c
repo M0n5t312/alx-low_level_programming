@@ -6,7 +6,7 @@
  * @cmp:function to compare values
  * Return: -1if no elements or size less than zero else return int
  */
- int int_index(int *array, int size, int (*cmp)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
